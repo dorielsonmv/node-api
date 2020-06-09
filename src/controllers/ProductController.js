@@ -7,5 +7,12 @@ module.exports={
         const products = await Product.find();
 
         return res.json(products);
+    },
+
+    async store(req,res){
+        // criacao
+        const product = await Product.create(req.body);
+
+        return res.json(product)
     }
 };
